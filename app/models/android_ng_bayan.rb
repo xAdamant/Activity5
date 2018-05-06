@@ -1,0 +1,2 @@
+class AndroidNgBayan < ApplicationRecord
+end

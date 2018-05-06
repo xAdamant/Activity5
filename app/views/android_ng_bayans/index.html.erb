@@ -1,0 +1,42 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Android Ng Bayans</h1>
+
+<table cellpadding="10">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Brand</th>
+      <th>Year released</th>
+      <th>Mpixel</th>
+      <th>Internal storage</th>
+      <th>Size of screen</th>
+      <th>Operating system</th>
+      <th>Stock</th>
+      <th colspan="2"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @android_ng_bayans.each do |android_ng_bayan| %>
+      	<% unless android_ng_bayan.Stock == 0 %>
+	<tr align="center">
+        <td><%= android_ng_bayan.Name %></td>
+        <td><%= android_ng_bayan.Brand %></td>
+        <td><%= android_ng_bayan.Year_Released %></td>
+        <td><%= android_ng_bayan.Mpixel %></td>
+        <td><%= android_ng_bayan.Internal_Storage %></td>
+        <td><%= android_ng_bayan.Size_of_Screen %></td>
+        <td><%= android_ng_bayan.Operating_System %></td>
+        <td><%= android_ng_bayan.Stock %></td>
+        <td><%= link_to 'Show', android_ng_bayan %></td>
+        <td><a href="android_ng_bayans/<%=android_ng_bayan.id%>/sold">Sold</a></td>
+      	</tr>
+	<% end %>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Android Ng Bayan', new_android_ng_bayan_path %>

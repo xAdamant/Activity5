@@ -1,0 +1,57 @@
+<%= form_with(model: android_ng_bayan, local: true) do |form| %>
+  <% if android_ng_bayan.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(android_ng_bayan.errors.count, "error") %> prohibited this android_ng_bayan from being saved:</h2>
+
+      <ul>
+      <% android_ng_bayan.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :Name %>
+    <%= form.text_field :Name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Brand %>
+    <%= form.select :Brand, ['Samsung', 'Apple' , 'Oppo', 'Vivo', 'Ziomi', 'LG'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Year_Released %>
+    <%= form.select :Year_Released, ['2010', '2011', '2012', '2013 ', '2014 ', '2015 ', '2016', '2017', '2018', ] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Mpixel %>
+    <%= form.select :Mpixel, ['AmoLED', 'Full HD', 'HD'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Internal_Storage %>
+    <%= form.select :Internal_Storage, ['4gb', '8gb', '16gb', '32gb', '64gb', '128gb' ] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Size_of_Screen %>
+    <%= form.select :Size_of_Screen, ['1440 x 2960', '1440 x 2560', '1125 x 2436', '1080 x 1920', '750 x 1334', ] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Operating_System %>
+    <%= form.select :Operating_System, ['Android', 'IOS'] %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Stock %>
+    <%= form.number_field :Stock %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
